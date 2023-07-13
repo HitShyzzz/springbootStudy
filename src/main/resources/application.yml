@@ -1,0 +1,16 @@
+
+person:
+  name: shy${random.uuid}}
+  age: ${random.int}
+  happy: false
+  birth: 1996/07/30
+  maps: {k1: v1,k2: v2}
+  lists:
+    - code
+    - sing
+    - girl
+  dog:
+    name: ${person.hello:hello}_旺财
+    age: 3
+server:
+  port: 8081
