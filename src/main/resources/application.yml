@@ -1,4 +1,3 @@
-
 person:
   name: shy${random.uuid}}
   age: ${random.int}
@@ -13,4 +12,25 @@ person:
     name: ${person.hello:hello}_旺财
     age: 3
 server:
+  port: 8080
+spring:
+  profiles:
+    active: dev
+
+# debug: true 表示开启哪些自动配置生效，哪些没有生效！
+# debug: true
+---
+server:
+  port: 8083
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---
+server:
   port: 8081
+spring:
+  config:
+    activate:
+      on-profile: test
