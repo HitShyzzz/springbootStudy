@@ -18,10 +18,10 @@ import java.util.Set;
 @Controller
 public class IndexController {
 
-    @RequestMapping("/index")
-    public String index(){
-        return "index";
-    }
+//    @RequestMapping({"/index.html","/index"})
+//    public String index(){
+//        return "index";
+//    }
     @RequestMapping("/test")
     public String test(Model model){
         model.addAttribute("msg","<h1>hello, spring boot~</h1>");

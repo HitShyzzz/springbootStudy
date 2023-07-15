@@ -1,6 +1,7 @@
 package com.shy.springbootstudy.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -35,5 +36,12 @@ public class MyMVCConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/shy").setViewName("test");
+        registry.addViewController("/index").setViewName("index");
+        registry.addViewController("/index.html").setViewName("index");
+    }
+    // 自定义的国际化
+    @Bean
+    public LocaleResolver getLocaleResolver() {
+        return new MyLocaleResolver();
     }
 }

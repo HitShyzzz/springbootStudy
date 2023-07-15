@@ -21,14 +21,14 @@ public class EmployeeDao {
     // 模拟员工数据
     private static Map<Integer, Employee> employees;
     @Autowired
-    private static DepartmentDao departmentDao;
+    private  DepartmentDao departmentDao;
     static {
         employees=new HashMap<>();
-        employees.put(1001,new Employee(1001,"AA","213734821@qq.com",1,departmentDao.getDepartmentById(101)));
-        employees.put(1002,new Employee(1002,"BB","223734821@qq.com",0,departmentDao.getDepartmentById(102)));
-        employees.put(1003,new Employee(1003,"CC","233734821@qq.com",1,departmentDao.getDepartmentById(103)));
-        employees.put(1004,new Employee(1004,"DD","243734821@qq.com",0,departmentDao.getDepartmentById(104)));
-        employees.put(1005,new Employee(1005,"EE","253734821@qq.com",1,departmentDao.getDepartmentById(105)));
+        employees.put(1001,new Employee(1001,"AA","213734821@qq.com",1,new Department(101,"教学部")));
+        employees.put(1002,new Employee(1002,"BB","223734821@qq.com",0,new Department(102,"市场部")));
+        employees.put(1003,new Employee(1003,"CC","233734821@qq.com",1,new Department(103,"教研部")));
+        employees.put(1004,new Employee(1004,"DD","243734821@qq.com",0,new Department(104,"运营部")));
+        employees.put(1005,new Employee(1005,"EE","253734821@qq.com",1,new Department(105,"后勤部")));
     }
 
     // 主键自增

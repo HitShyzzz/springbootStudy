@@ -16,6 +16,10 @@ server:
 spring:
   profiles:
     active: dev
+  thymeleaf:
+    cache: false # 关闭模板引擎缓存！
+  messages:
+    basename: i18n.login
 
 # debug: true 表示开启哪些自动配置生效，哪些没有生效！
 # debug: true
